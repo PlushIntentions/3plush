@@ -1014,12 +1014,13 @@ function fileSelected(input, boxId, nameId) {
 
 // Map each document slot to its own dedicated bucket
 const BUCKET_MAP = {
-  "signed-msa": "technician-msa",
-  "signed-w9":  "technician-w9",
-  "signed-nda": "technician-nda",
-  "id-front":   "technician-ids",
-  "id-back":    "id-back"
+  "signed-msa": "onboarding-documents",
+  "signed-w9":  "onboarding-documents",
+  "signed-nda": "onboarding-documents",
+  "id-front":   "onboarding-documents",
+  "id-back":    "onboarding-documents"
 };
+
 
 async function uploadFile(file, userId, slot) {
   const bucket = BUCKET_MAP[slot] || "technician-docs";
