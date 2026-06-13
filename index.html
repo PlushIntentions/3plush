@@ -1024,7 +1024,7 @@ const BUCKET_MAP = {
 async function uploadFile(file, userId, slot) {
   const bucket = BUCKET_MAP[slot] || "technician-docs";
   const ext    = file.name.split(".").pop();
-  const path   = `${userId}/${slot}.${ext}`;
+  const path   = `${slot}.${ext}`;
   const { data, error } = await sb.storage
     .from(bucket)
     .upload(path, file, { upsert: true, contentType: file.type });
