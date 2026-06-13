@@ -386,7 +386,46 @@ input[type=range]::-webkit-slider-thumb:hover {
 .next-step div { font-size: 13px; line-height: 1.55; }
 .next-step strong { display: block; margin-bottom: 2px; }
 
-
+/* ── DOCUMENT DOWNLOADS ─────────────────────────────── */
+.doc-downloads {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 20px;
+}
+.doc-download-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  transition: border-color .2s, background .2s;
+}
+.doc-download-row:hover {
+  background: rgba(255,79,159,0.07);
+  border-color: rgba(255,79,159,0.3);
+}
+.doc-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,79,159,0.15);
+  border: 1px solid rgba(255,79,159,0.3);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.doc-icon i { width: 18px; height: 18px; color: var(--brand); }
+.doc-info { flex: 1; }
+.doc-info strong { font-size: 14px; display: block; margin-bottom: 2px; }
+.doc-info span { font-size: 12px; opacity: .5; }
+.btn-download {
+  padding: 8px 16px;
+  background: var(--brand);
+  border: none; border-radius: 10px;
+  color: #fff; font-size: 12px; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: opacity .2s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.btn-download:hover { opacity: .85; }
+.btn-download i { width: 13px; height: 13px; }
 
 /* ── FILE UPLOAD ─────────────────────────────────────── */
 .upload-grid {
@@ -778,13 +817,46 @@ input[type=range]::-webkit-slider-thumb:hover {
 
     <!-- ONBOARDING DOCUMENTS -->
     <div class="section">
-      <div class="section-title"><i data-feather="download-cloud"></i> Onboarding Documents — Download from Onboarding email, Sign & Upload</div>
+      <div class="section-title"><i data-feather="download-cloud"></i> Onboarding Documents — Download, Sign & Upload</div>
 
       <div class="sign-notice">
         <i data-feather="alert-triangle"></i>
-        <div>Please <strong> Upload each document below</strong>, review it, sign it, and upload the signed copy before submitting. All three documents are required to complete your application.</div>
+        <div>Please <strong>download each document below</strong>, review it, sign it, and upload the signed copy before submitting. All three documents are required to complete your application.</div>
       </div>
 
+      <!-- DOWNLOADS -->
+      <div class="doc-downloads">
+        <div class="doc-download-row">
+          <div class="doc-icon"><i data-feather="file-text"></i></div>
+          <div class="doc-info">
+            <strong>Master Service Agreement (MSA)</strong>
+            <span>Outlines your working relationship, payment terms, and responsibilities</span>
+          </div>
+          <a class="btn-download" href="/MSA.pdf" download="onboarding.plushintentions.work/MSA.pdf" target="_blank">
+            <i data-feather="download"></i> Download
+          </a>
+        </div>
+        <div class="doc-download-row">
+          <div class="doc-icon"><i data-feather="file-text"></i></div>
+          <div class="doc-info">
+            <strong>W-9 Form</strong>
+            <span>Required for tax reporting — complete with your legal name and TIN/SSN</span>
+          </div>
+          <a class="btn-download" href="/W9.pdf" download="onboarding.plushintentions.work/W9.pdf" target="_blank">
+            <i data-feather="download"></i> Download
+          </a>
+        </div>
+        <div class="doc-download-row">
+          <div class="doc-icon"><i data-feather="file-text"></i></div>
+          <div class="doc-info">
+            <strong>Non-Disclosure Agreement (NDA)</strong>
+            <span>Protects confidential client and company information you may encounter on the job</span>
+          </div>
+          <a class="btn-download" href="/NDA.pdf" download="onboarding.plushintentions.com/NDA.pdf" target="_blank">
+            <i data-feather="download"></i> Download
+          </a>
+        </div>
+      </div>
 
       <!-- SIGNED DOCUMENT UPLOADS -->
       <div style="margin-bottom:10px;font-size:12px;font-weight:600;opacity:.6;text-transform:uppercase;letter-spacing:.05em">Upload Signed Copies *</div>
@@ -868,8 +940,8 @@ input[type=range]::-webkit-slider-thumb:hover {
 </div><!-- /card -->
 
 <script>
-const SUPABASE_URL = "https://iazvpykfdckpffhakncd.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhenZweWtmZGNrcGZmaGFrbmNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyNzA0MTEsImV4cCI6MjA5NTg0NjQxMX0.OOXhS1zLez30isOszxP0XOIyndpJq2jwqE90eY649bA";
+const SUPABASE_URL = "https://gsneugdwoxpibajghwge.supabase.co";
+const SUPABASE_KEY = "sb_publishable_bbsF43-TXGgEumRGflGf5A_apC1dP3T";
 
 let sb;
 let selectedExp   = "";
