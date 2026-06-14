@@ -1017,7 +1017,7 @@ const BUCKET_MAP = {
   "signed-msa": "onboarding-documents",
   "signed-w9":  "onboarding-documents",
   "signed-nda": "onboarding-documents",
-  "id-front":   "onboarding-documents",
+  "technician-id":   "onboarding-documents",
   "id-back":    "onboarding-documents"
 };
 
@@ -1051,11 +1051,11 @@ async function submitApp() {
   const bio      = document.getElementById("f-bio").value.trim();
 
   // File inputs
-  const fileMsa     = document.getElementById("file-msa").files[0];
-  const fileW9      = document.getElementById("file-w9").files[0];
-  const fileNda     = document.getElementById("file-nda").files[0];
-  const fileIdFront = document.getElementById("file-id-front").files[0];
-  const fileIdBack  = document.getElementById("file-id-back").files[0];
+  const fileMsa     = document.getElementById("technician-msa").files[0];
+  const fileW9      = document.getElementById("technician-w9").files[0];
+  const fileNda     = document.getElementById("technician-nda").files[0];
+  const fileIdFront = document.getElementById("technician-id").files[0];
+  const fileIdBack  = document.getElementById("id-back").files[0];
 
   // Collect selected skills
   const skills = [];
@@ -1097,7 +1097,7 @@ async function submitApp() {
       uploadFile(fileW9,      userId, "signed-w9"),
       uploadFile(fileNda,     userId, "signed-nda"),
       uploadFile(fileIdFront, userId, "id-front"),
-      uploadFile(fileIdBack,  userId, "id-back")
+      uploadFile(fileIdBack,  userId, "technician-id")
     ]);
   } catch (uploadErr) {
     showError("File upload failed: " + uploadErr.message + ". Please try again.");
