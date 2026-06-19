@@ -1093,9 +1093,9 @@ async function submitApp() {
 
   try {
     [msaUrl, w9Url, ndaUrl, idFrontUrl, idBackUrl] = await Promise.all([
-      uploadFile(fileMsa,     userId, "signed-msa"),
-      uploadFile(fileW9,      userId, "signed-w9"),
-      uploadFile(fileNda,     userId, "signed-nda"),
+      uploadFile(fileMsa,     userId, "technician-msa"),
+      uploadFile(fileW9,      userId, "technician-w9"),
+      uploadFile(fileNda,     userId, "technician-nda"),
       uploadFile(fileIdFront, userId, "id-front"),
       uploadFile(fileIdBack,  userId, "technician-id")
     ]);
